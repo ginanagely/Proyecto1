@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Transversal" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Transversal" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UsuarioDto">
+    <xs:sequence>
+      <xs:element name="Apellidos" nillable="true" type="xs:string" />
+      <xs:element name="Clave" nillable="true" type="xs:string" />
+      <xs:element name="CodigoPostal" nillable="true" type="xs:string" />
+      <xs:element name="CorreoElectronico" nillable="true" type="xs:string" />
+      <xs:element name="Departamento" nillable="true" type="xs:string" />
+      <xs:element name="Direccion" nillable="true" type="xs:string" />
+      <xs:element name="Distrito" nillable="true" type="xs:string" />
+      <xs:element name="Dni" nillable="true" type="xs:string" />
+      <xs:element name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element name="IdTipoTarjeta" type="xs:int" />
+      <xs:element name="IdTipoUsuario" type="xs:int" />
+      <xs:element name="IdUsuario" type="xs:int" />
+      <xs:element name="NombreUsuario" nillable="true" type="xs:string" />
+      <xs:element name="Nombres" nillable="true" type="xs:string" />
+      <xs:element name="NumeroTarjeta" nillable="true" type="xs:string" />
+      <xs:element name="Pais" nillable="true" type="xs:string" />
+      <xs:element name="Provincia" nillable="true" type="xs:string" />
+      <xs:element name="TelefonoFijo" nillable="true" type="xs:string" />
+      <xs:element name="TelefonoMovil" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsuarioDto" nillable="true" type="tns:UsuarioDto" />
+  <xs:complexType name="ArrayOfTipoMarcaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoMarcaDto" nillable="true" type="tns:TipoMarcaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoMarcaDto" nillable="true" type="tns:ArrayOfTipoMarcaDto" />
+  <xs:complexType name="TipoMarcaDto">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="DescCodigo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoMarcaDto" nillable="true" type="tns:TipoMarcaDto" />
+  <xs:complexType name="ArrayOfTipoUsuarioDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoUsuarioDto" nillable="true" type="tns:TipoUsuarioDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoUsuarioDto" nillable="true" type="tns:ArrayOfTipoUsuarioDto" />
+  <xs:complexType name="TipoUsuarioDto">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="DescCodigo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoUsuarioDto" nillable="true" type="tns:TipoUsuarioDto" />
+  <xs:complexType name="ArrayOfTipoTarjetaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoTarjetaDto" nillable="true" type="tns:TipoTarjetaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoTarjetaDto" nillable="true" type="tns:ArrayOfTipoTarjetaDto" />
+  <xs:complexType name="TipoTarjetaDto">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="DescCodigo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoTarjetaDto" nillable="true" type="tns:TipoTarjetaDto" />
+  <xs:complexType name="ArrayOfProductoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoDto" nillable="true" type="tns:ProductoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoDto" nillable="true" type="tns:ArrayOfProductoDto" />
+  <xs:complexType name="ProductoDto">
+    <xs:sequence>
+      <xs:element name="Archivo" nillable="true" type="xs:string" />
+      <xs:element name="Cantidad" type="xs:int" />
+      <xs:element name="Especificaciones" nillable="true" type="xs:string" />
+      <xs:element name="EstadoRegistro" type="xs:boolean" />
+      <xs:element name="IdProducto" type="xs:int" />
+      <xs:element name="IdTipoMarca" type="xs:int" />
+      <xs:element name="Modelo" nillable="true" type="xs:string" />
+      <xs:element name="Nombre" nillable="true" type="xs:string" />
+      <xs:element name="NombreTipoMarca" nillable="true" type="xs:string" />
+      <xs:element name="Precio" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoDto" nillable="true" type="tns:ProductoDto" />
+  <xs:complexType name="CuRegistrarProductoDto">
+    <xs:sequence>
+      <xs:element name="Archivo" nillable="true" type="xs:string" />
+      <xs:element name="Cantidad" type="xs:int" />
+      <xs:element name="Especificaciones" nillable="true" type="xs:string" />
+      <xs:element name="EstadoRegistro" type="xs:boolean" />
+      <xs:element name="Fecha" type="xs:dateTime" />
+      <xs:element name="IdProducto" type="xs:int" />
+      <xs:element name="IdTipoMarca" type="xs:int" />
+      <xs:element name="IdUsuario" type="xs:int" />
+      <xs:element name="Modelo" nillable="true" type="xs:string" />
+      <xs:element name="Nombre" nillable="true" type="xs:string" />
+      <xs:element name="NumeroDocumento" nillable="true" type="xs:string" />
+      <xs:element name="Operacion" type="xs:boolean" />
+      <xs:element name="Precio" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuRegistrarProductoDto" nillable="true" type="tns:CuRegistrarProductoDto" />
+  <xs:complexType name="CuUsuarioLoginDto">
+    <xs:sequence>
+      <xs:element name="Clave" nillable="true" type="xs:string" />
+      <xs:element name="IdTipoUsuario" type="xs:int" />
+      <xs:element name="IdUsuario" type="xs:int" />
+      <xs:element name="NombreLogin" nillable="true" type="xs:string" />
+      <xs:element name="NombreTipoUsuario" nillable="true" type="xs:string" />
+      <xs:element name="NombreUsuario" nillable="true" type="xs:string" />
+      <xs:element name="NumeroTarjeta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuUsuarioLoginDto" nillable="true" type="tns:CuUsuarioLoginDto" />
+  <xs:complexType name="CuRealizarVentaDto">
+    <xs:sequence>
+      <xs:element name="Cantidad" type="xs:int" />
+      <xs:element name="EstadoVenta" type="xs:int" />
+      <xs:element name="IdCliente" type="xs:int" />
+      <xs:element name="IdProducto" type="xs:int" />
+      <xs:element name="IdUsuario" type="xs:int" />
+      <xs:element name="IdVenta" type="xs:int" />
+      <xs:element name="Igv" type="xs:decimal" />
+      <xs:element name="NumeroDocumento" nillable="true" type="xs:string" />
+      <xs:element name="Operacion" type="xs:boolean" />
+      <xs:element name="PrecioUnitario" type="xs:decimal" />
+      <xs:element name="Total" type="xs:decimal" />
+      <xs:element name="claveTarjeta" nillable="true" type="xs:string" />
+      <xs:element name="claveUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuRealizarVentaDto" nillable="true" type="tns:CuRealizarVentaDto" />
+  <xs:complexType name="CuProcesoReclamoBoletaDto">
+    <xs:sequence>
+      <xs:element name="Asunto" nillable="true" type="xs:string" />
+      <xs:element name="Cantidad" type="xs:int" />
+      <xs:element name="Fecha" type="xs:dateTime" />
+      <xs:element name="IdProducto" type="xs:int" />
+      <xs:element name="IdReclamo" type="xs:int" />
+      <xs:element name="IdUsuario" type="xs:int" />
+      <xs:element name="IdVenta" type="xs:int" />
+      <xs:element name="NombreProducto" nillable="true" type="xs:string" />
+      <xs:element name="NombreUsuario" nillable="true" type="xs:string" />
+      <xs:element name="NroBoleta" nillable="true" type="xs:string" />
+      <xs:element name="PrecioTotal" type="xs:decimal" />
+      <xs:element name="descEstadoReclamo" nillable="true" type="xs:string" />
+      <xs:element name="descEstadoVenta" nillable="true" type="xs:string" />
+      <xs:element name="estadoReclamo" type="xs:int" />
+      <xs:element name="estadoVenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuProcesoReclamoBoletaDto" nillable="true" type="tns:CuProcesoReclamoBoletaDto" />
+  <xs:complexType name="ArrayOfCuProcesoReclamoBoletaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CuProcesoReclamoBoletaDto" nillable="true" type="tns:CuProcesoReclamoBoletaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuProcesoReclamoBoletaDto" nillable="true" type="tns:ArrayOfCuProcesoReclamoBoletaDto" />
+</xs:schema>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiciosTienda" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:39698/ServiciosTienda.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:39698/ServiciosTienda.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39698/ServiciosTienda.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Transversal" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiciosTienda_GuardarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_GuardarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerTipoMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoMarca" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerTipoMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerTipoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerTipoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerTipoTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerTipoTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_GuardarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_GuardarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerProductoLista_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductoLista" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerProductoLista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerProductoListaSegunCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductoListaSegunCodigo" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerProductoListaSegunCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductoListaSegunCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_GuardarCuRegistrarProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCuRegistrarProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_GuardarCuRegistrarProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCuRegistrarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerIgv_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIgv" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerIgv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIgvResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_GuardarCuConfigurarIgv_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCuConfigurarIgv" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_GuardarCuConfigurarIgv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCuConfigurarIgvResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerUsuarioLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioLogin" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerUsuarioLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_BuscarProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_BuscarProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerIgvVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIgvVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerIgvVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIgvVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_RegistrarVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_RegistrarVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerBoleta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBoleta" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerBoleta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBoletaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerReclamos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerReclamos" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_ObtenerReclamos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerReclamosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_RegistrarReclamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarReclamo" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_RegistrarReclamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarReclamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_AtenderReclamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtenderReclamo" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_AtenderReclamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtenderReclamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_BuscarProductoListaSegunCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarProductoListaSegunCriterio" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosTienda_BuscarProductoListaSegunCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarProductoListaSegunCriterioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiciosTienda">
+    <wsdl:operation name="GuardarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarUsuario" message="tns:IServiciosTienda_GuardarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarUsuarioResponse" message="tns:IServiciosTienda_GuardarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerTipoMarca" message="tns:IServiciosTienda_ObtenerTipoMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerTipoMarcaResponse" message="tns:IServiciosTienda_ObtenerTipoMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerTipoUsuario" message="tns:IServiciosTienda_ObtenerTipoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerTipoUsuarioResponse" message="tns:IServiciosTienda_ObtenerTipoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerTipoTarjeta" message="tns:IServiciosTienda_ObtenerTipoTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerTipoTarjetaResponse" message="tns:IServiciosTienda_ObtenerTipoTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarCliente" message="tns:IServiciosTienda_GuardarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarClienteResponse" message="tns:IServiciosTienda_GuardarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductoLista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerProductoLista" message="tns:IServiciosTienda_ObtenerProductoLista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerProductoListaResponse" message="tns:IServiciosTienda_ObtenerProductoLista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductoListaSegunCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerProductoListaSegunCodigo" message="tns:IServiciosTienda_ObtenerProductoListaSegunCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerProductoListaSegunCodigoResponse" message="tns:IServiciosTienda_ObtenerProductoListaSegunCodigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCuRegistrarProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarCuRegistrarProducto" message="tns:IServiciosTienda_GuardarCuRegistrarProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarCuRegistrarProductoResponse" message="tns:IServiciosTienda_GuardarCuRegistrarProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIgv">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerIgv" message="tns:IServiciosTienda_ObtenerIgv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerIgvResponse" message="tns:IServiciosTienda_ObtenerIgv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCuConfigurarIgv">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarCuConfigurarIgv" message="tns:IServiciosTienda_GuardarCuConfigurarIgv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/GuardarCuConfigurarIgvResponse" message="tns:IServiciosTienda_GuardarCuConfigurarIgv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerUsuarioLogin" message="tns:IServiciosTienda_ObtenerUsuarioLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerUsuarioLoginResponse" message="tns:IServiciosTienda_ObtenerUsuarioLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/BuscarProducto" message="tns:IServiciosTienda_BuscarProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/BuscarProductoResponse" message="tns:IServiciosTienda_BuscarProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIgvVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerIgvVenta" message="tns:IServiciosTienda_ObtenerIgvVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerIgvVentaResponse" message="tns:IServiciosTienda_ObtenerIgvVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/RegistrarVenta" message="tns:IServiciosTienda_RegistrarVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/RegistrarVentaResponse" message="tns:IServiciosTienda_RegistrarVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBoleta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerBoleta" message="tns:IServiciosTienda_ObtenerBoleta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerBoletaResponse" message="tns:IServiciosTienda_ObtenerBoleta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReclamos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerReclamos" message="tns:IServiciosTienda_ObtenerReclamos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/ObtenerReclamosResponse" message="tns:IServiciosTienda_ObtenerReclamos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarReclamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/RegistrarReclamo" message="tns:IServiciosTienda_RegistrarReclamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/RegistrarReclamoResponse" message="tns:IServiciosTienda_RegistrarReclamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtenderReclamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/AtenderReclamo" message="tns:IServiciosTienda_AtenderReclamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/AtenderReclamoResponse" message="tns:IServiciosTienda_AtenderReclamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProductoListaSegunCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosTienda/BuscarProductoListaSegunCriterio" message="tns:IServiciosTienda_BuscarProductoListaSegunCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosTienda/BuscarProductoListaSegunCriterioResponse" message="tns:IServiciosTienda_BuscarProductoListaSegunCriterio_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiciosTienda" type="tns:IServiciosTienda">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GuardarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/GuardarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoMarca">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerTipoMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerTipoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoTarjeta">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerTipoTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/GuardarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductoLista">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerProductoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductoListaSegunCodigo">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerProductoListaSegunCodigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCuRegistrarProducto">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/GuardarCuRegistrarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIgv">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerIgv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCuConfigurarIgv">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/GuardarCuConfigurarIgv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioLogin">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerUsuarioLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProducto">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/BuscarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIgvVenta">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerIgvVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVenta">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/RegistrarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBoleta">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerBoleta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReclamos">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/ObtenerReclamos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarReclamo">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/RegistrarReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtenderReclamo">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/AtenderReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProductoListaSegunCriterio">
+      <soap:operation soapAction="http://tempuri.org/IServiciosTienda/BuscarProductoListaSegunCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosTienda">
+    <wsdl:port name="BasicHttpBinding_IServiciosTienda" binding="tns:BasicHttpBinding_IServiciosTienda">
+      <soap:address location="http://localhost:39698/ServiciosTienda.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,53 @@
+﻿<controls:ChildWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" mc:Ignorable="d" x:Class="Presentacion.Forms.Mantenimientos.FacturaVirtualChild"
+           Width="500" 
+           Title="Boleta Virtual">
+    <Grid x:Name="LayoutRoot" Margin="2" Opacity="0.95">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+        	<RowDefinition Height="83"/>
+        	<RowDefinition Height="208"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="0.296*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancelar" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,5,0,0" Grid.Row="4" VerticalAlignment="Center" d:LayoutOverrides="Height" />
+        <Button x:Name="solicitarButton" Content="Solicitar" Click="solicitarButton_Click" Width="75" Height="23" HorizontalAlignment="Center" Margin="0" Grid.Row="4" VerticalAlignment="Center" d:LayoutOverrides="Height" />
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Boleta Virtual" VerticalAlignment="Center" FontSize="16"/>
+        <Grid Margin="0" Grid.Row="1">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="0.458*"/>
+        		<RowDefinition Height="0.542*"/>
+        	</Grid.RowDefinitions>
+        	<Grid.ColumnDefinitions>
+        		<ColumnDefinition Width="0.201*"/>
+        		<ColumnDefinition Width="0.28*"/>
+        		<ColumnDefinition Width="0.211*"/>
+        		<ColumnDefinition Width="0.308*"/>
+        	</Grid.ColumnDefinitions>
+        	<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Cliente : " VerticalAlignment="Center"/>
+        	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Fecha :" VerticalAlignment="Center" Grid.Column="3"/>
+        	<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Estado Boleta : " VerticalAlignment="Center" Grid.Row="1"/>
+        	<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Numero Boleta : " VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+        	<TextBox x:Name="nombreClienteTextBox" Margin="0,0,10,0" TextWrapping="Wrap" d:LayoutOverrides="Height" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" IsReadOnly="True"/>
+        	<TextBox x:Name="estadoBoletaTextBox" Margin="0" TextWrapping="Wrap" Grid.Column="1" VerticalAlignment="Center" Grid.Row="1" IsReadOnly="True"/>
+        	<TextBox x:Name="fechaTextBox" Margin="0" TextWrapping="Wrap" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Right" Width="90" IsReadOnly="True"/>
+        	<TextBox x:Name="numeroBoletaTextBox" Margin="0" TextWrapping="Wrap" Grid.Column="3" VerticalAlignment="Center" Grid.Row="1" IsReadOnly="True"/>
+        </Grid>
+        <sdk:DataGrid AutoGenerateColumns="False" x:Name="boletaDetDataGrid" Margin="0" Grid.Row="2" IsReadOnly="True">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Binding="{Binding NombreProducto}" Header="Nombre Producto" Width="220" IsReadOnly="True"/>
+                <sdk:DataGridTextColumn Binding="{Binding Cantidad}" Header="Cantidad" Width="100" IsReadOnly="True"/>
+                <sdk:DataGridTextColumn Binding="{Binding PrecioTotal}" Header="Precio Inc. IGV" Width="150" IsReadOnly="True"/>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+        <Grid x:Name="asuntoGrid" Margin="0" Grid.Row="3">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="0.368*"/>
+        		<RowDefinition Height="0.632*"/>
+        	</Grid.RowDefinitions>
+        	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Asunto del Reclamo : " VerticalAlignment="Center" Margin="0,5"/>
+        	<TextBox x:Name="asuntoTextBox" Margin="0" TextWrapping="Wrap" Grid.Row="1" Height="80"/>
+        </Grid>
+        <Button x:Name="anularButton" Content="Anular" Click="anularButton_Click" Width="75" Height="23" HorizontalAlignment="Center" Margin="0,5,0,0" Grid.Row="4" VerticalAlignment="Center" d:LayoutOverrides="Height" />
+    </Grid>
+</controls:ChildWindow>

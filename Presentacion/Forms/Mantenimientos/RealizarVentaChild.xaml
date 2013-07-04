@@ -1,0 +1,80 @@
+﻿<controls:ChildWindow
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Presentacion.Forms.Mantenimientos.RealizarVentaChild"
+           Width="400" 
+           Title="RealizarVentaChild" Height="300">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancelar" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="Confirmar Compra" Click="OKButton_Click" Height="23" Margin="177,0,79,0" Grid.Row="1" />
+        <controls:TabControl Height="200" VerticalAlignment="Top">
+        	<controls:TabItem x:Name="paso1TabItem" Header="Paso 1">
+        		<Grid Background="#FFE5E5E5">
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="0.239*"/>
+        				<RowDefinition Height="0.245*"/>
+        				<RowDefinition Height="0.27*"/>
+        				<RowDefinition Height="0.245*"/>
+        			</Grid.RowDefinitions>
+        			<Grid.ColumnDefinitions>
+        				<ColumnDefinition Width="0.5*"/>
+        				<ColumnDefinition Width="0.5*"/>
+        			</Grid.ColumnDefinitions>
+        			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Nombres :" VerticalAlignment="Center"/>
+        			<TextBox x:Name="NombreUsuarioTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" IsReadOnly="True"/>
+        			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Clave Usuario :" VerticalAlignment="Center" Grid.Row="1"/>
+        			<TextBox x:Name="claveUsuarioTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Cantidad De Produtos :" VerticalAlignment="Center" Grid.Row="2"/>
+        			<TextBox x:Name="cantidadProductoTextBox" KeyDown="cantidadProductoTextBox_KeyDown" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Text="0" LostFocus="cantidadProductoTextBox_LostFocus"/>
+        			<Button x:Name="siguienteP1Button" Content="Siguiente" HorizontalAlignment="Center" Margin="0" Width="75" Grid.Row="4" VerticalAlignment="Center" Grid.Column="1" Click="siguienteP1Button_Click" />
+        		</Grid>
+        	</controls:TabItem>
+        	<controls:TabItem x:Name="paso2Item" Header="Paso 2">
+        		<Grid Background="#FFE5E5E5">
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="0.374*"/>
+        				<RowDefinition Height="0.344*"/>
+        				<RowDefinition Height="0.282*"/>
+        			</Grid.RowDefinitions>
+        			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Numero Tarjeta" VerticalAlignment="Top"/>
+        			<TextBox x:Name="numeroTarjetaTextBox" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" IsReadOnly="True"/>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Clave Tarjeta" VerticalAlignment="Center" Grid.Row="1"/>
+        			<TextBox x:Name="claveTarjetaTextBox" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Row="1"/>
+        			<Button x:Name="anteriorP2Button" Content="Anterior" HorizontalAlignment="Center" Margin="0,0,150,0" Width="75" Grid.Row="4" VerticalAlignment="Center" Click="anteriorP2Button_Click" />
+        			<Button x:Name="siguienteP2Button" Content="Siguiente" HorizontalAlignment="Center" Margin="150,0,0,0" Width="75" Grid.Row="4" VerticalAlignment="Center" Grid.Column="1" Click="siguienteP2Button_Click" />
+        		</Grid>
+        	</controls:TabItem>
+			
+			<controls:TabItem x:Name="paso3Item" Header="Paso 3">
+        		<Grid Background="#FFE5E5E5">
+        			<Grid.ColumnDefinitions>
+        				<ColumnDefinition Width="0.503*"/>
+        				<ColumnDefinition Width="0.497*"/>
+        			</Grid.ColumnDefinitions>
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="0.215*"/>
+        				<RowDefinition Height="0.19*"/>
+        				<RowDefinition Height="0.184*"/>
+        				<RowDefinition Height="0.215*"/>
+        				<RowDefinition Height="0.196*"/>
+        			</Grid.RowDefinitions>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Producto :" VerticalAlignment="Center"/>
+                    <TextBox IsReadOnly="True" x:Name="nombResumenProdTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1"/>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Precio :" VerticalAlignment="Center" Grid.Row="1"/>
+                    <TextBox IsReadOnly="True" x:Name="precioProdTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cantidad :" VerticalAlignment="Center" Grid.Row="2"/>
+                    <TextBox IsReadOnly="True" x:Name="cantidadProdTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Precio Neto Con IGV :" VerticalAlignment="Center" Grid.Row="3"/>
+        			<TextBox IsReadOnly="True" x:Name="totalProdTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+        			<Button x:Name="anteriorP3Button" Content="Anterior" HorizontalAlignment="Center" Margin="0" Width="75" d:LayoutOverrides="Height" Grid.Row="4" VerticalAlignment="Center"/>
+        		</Grid> 
+        	</controls:TabItem>
+        </controls:TabControl>
+    </Grid>
+</controls:ChildWindow>

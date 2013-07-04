@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="90df5e17-9126-4786-b47a-a0fdefc2a96d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:39698/ServiciosTienda.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiciosTienda.xsd" MetadataType="Schema" ID="6d276233-429d-4d6c-b092-612fc8b2740e" SourceId="1" SourceUrl="http://localhost:39698/ServiciosTienda.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiciosTienda1.xsd" MetadataType="Schema" ID="8b37e8fe-86b9-4336-bb8c-b0b461fcf00e" SourceId="1" SourceUrl="http://localhost:39698/ServiciosTienda.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiciosTienda11.xsd" MetadataType="Schema" ID="d63d252b-faea-4c75-a335-85737c2e2fe1" SourceId="1" SourceUrl="http://localhost:39698/ServiciosTienda.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiciosTienda.wsdl" MetadataType="Wsdl" ID="a4e41c01-0321-4e8d-b3b0-38f4de14096c" SourceId="1" SourceUrl="http://localhost:39698/ServiciosTienda.svc?wsdl" />
+    <MetadataFile FileName="ServiciosTienda.disco" MetadataType="Disco" ID="7b71788e-001b-4641-b3c1-ebe72c940ebb" SourceId="1" SourceUrl="http://localhost:39698/ServiciosTienda.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

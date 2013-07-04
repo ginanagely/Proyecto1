@@ -1,0 +1,65 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="Presentacion.Forms.Mantenimientos.CuRegistrarUsuario"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="487" Height="Auto" Margin="20,0">
+
+    <ScrollViewer>
+
+		<Grid x:Name="LayoutRoot" Background="White" Opacity="0.95">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.509*"/>
+				<ColumnDefinition Width="0.491*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0.13*"/>
+				<RowDefinition Height="2*"/>
+			</Grid.RowDefinitions>
+			<TextBlock x:Name="tituloBlock" Margin="0,10" TextWrapping="Wrap" Text="Registrar Cliente" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="17.333"/>
+			<TextBlock x:Name="nombresBlock" HorizontalAlignment="Left" Margin="0" Grid.Row="1" TextWrapping="Wrap" Text="Nombres" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="apellidosBlock" HorizontalAlignment="Left" Margin="0,23,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Apellidos" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="fechaNacimientoBlock" HorizontalAlignment="Left" Margin="0,46,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Fecha De Nacimiento" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="telefonoFijoBlock" HorizontalAlignment="Left" Margin="0,69,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Telefono Fijo" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="telefonoMovilBlock" HorizontalAlignment="Left" Margin="0,92,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Telefono Movil" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="correoElectronicoBlock" HorizontalAlignment="Left" Margin="0,115,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Correo Electronico" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="dniBlock" HorizontalAlignment="Left" Margin="0,138,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dni" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="distritoBlock" HorizontalAlignment="Left" Margin="0,161,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Distrito" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="provinciaBlock" HorizontalAlignment="Left" Margin="0,184,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Provincia" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="departamentoBlock" HorizontalAlignment="Left" Margin="0,207,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Departamento" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="paisBlock" HorizontalAlignment="Left" Margin="0,230,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Pais" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="codigoPostalBlock" HorizontalAlignment="Left" Margin="0,253,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Codigo Postal" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="tipoTarjetaBlock" HorizontalAlignment="Left" Margin="0,276,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Tipo Tarjeta" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="nroTarjetaBlock" HorizontalAlignment="Left" Margin="0,299,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Nro Tarjeta" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="direccionBlock" HorizontalAlignment="Left" Margin="0,322,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dirección" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="tipoUsuarioBlock" HorizontalAlignment="Left" Margin="0,345,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Tipo Usuario" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="usuarioBlock" HorizontalAlignment="Left" Margin="0,368,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top" Height="20"/>
+			<TextBlock x:Name="claveBlock" HorizontalAlignment="Left" Margin="0,391,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Clave" VerticalAlignment="Top" Height="20"/>
+			<TextBox x:Name="nombresTextBox"  Text="{Binding usuarioPrincipal.nombres, Mode=TwoWay}" Grid.Column="1" Margin="0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="nombresTextBox_KeyDown"/>
+			<TextBox x:Name="apellidosTextBox" Grid.Column="1" Margin="0,23,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="apellidosTextBox_KeyDown"/>
+			<telerik:RadMaskedTextBox MaskType="DateTime" Mask="d" EmptyContent="dd/mm/aaaa" x:Name="fechaNacimientoTextBox" Grid.Column="1" Margin="0,46,0,0" Grid.Row="1"  VerticalAlignment="Top" Height="20"/>
+			<TextBox x:Name="telefonoFijoTextBox" Grid.Column="1" Margin="0,69,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="telefonoFijoTextBox_KeyDown"/>
+			<TextBox x:Name="telefonoMovilTextBox" Grid.Column="1" Margin="0,92,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="telefonoMovilTextBox_KeyDown"/>
+			<TextBox x:Name="correoTextBox" Grid.Column="1" Margin="0,115,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+			<TextBox x:Name="dniTextBox" Grid.Column="1" Margin="0,138,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="dniTextBox_KeyDown"/>
+			<TextBox x:Name="distritoTextBox" Grid.Column="1" Margin="0,161,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="distritoTextBox_KeyDown"/>
+			<TextBox x:Name="provinciaTextBox" Grid.Column="1" Margin="0,184,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="provinciaTextBox_KeyDown"/>
+			<TextBox x:Name="departamentoTextBox" Grid.Column="1" Margin="0,207,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="departamentoTextBox_KeyDown"/>
+			<TextBox x:Name="paisTextBox" Grid.Column="1" Margin="0,230,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="paisTextBox_KeyDown"/>
+			<TextBox x:Name="codigoPostalTextBox" Grid.Column="1" Margin="0,253,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="codigoPostalTextBox_KeyDown"/>
+			<ComboBox x:Name="tipoTarjetaComboBox" DisplayMemberPath="DescCodigo" SelectedValuePath="Codigo" Grid.Column="1" Margin="0,276,0,0" Grid.Row="1"  VerticalAlignment="Top" Height="20"/>
+			<TextBox x:Name="nroTarjetaTextBox" Grid.Column="1" Margin="0,299,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" KeyDown="nroTarjetaTextBox_KeyDown"/>
+			<TextBox x:Name="direccionTextBox" Grid.Column="1" Margin="0,322,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+			<Button Click="GuardarButton_Click" x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Center" Margin="0,430,0,5" Grid.Row="1" VerticalAlignment="Top" Height="23" Grid.ColumnSpan="2"/>
+			<Button Click="LimpiarButton_Click" x:Name="limpiarButton" Content="Limpiar" HorizontalAlignment="Left" Margin="0,430,0,5" Grid.Row="1" VerticalAlignment="Top" Height="23" Grid.ColumnSpan="2" d:LayoutOverrides="GridBox"/>
+			<ComboBox x:Name="tipoUsuarioComboBox" DisplayMemberPath="DescCodigo" SelectedValuePath="Codigo" Grid.Column="1" Margin="0,345,0,0" Grid.Row="1" VerticalAlignment="Top" Height="20"/>
+			<TextBox x:Name="usuarioTextBox" Grid.Column="1" Margin="0,368,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+			<TextBox x:Name="claveTextBox" Grid.Column="1" Margin="0,391,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+
+    	
+
+		</Grid>
+	</ScrollViewer>
+</UserControl>

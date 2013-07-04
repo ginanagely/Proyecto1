@@ -1,0 +1,24 @@
+﻿<controls:ChildWindow x:Class="Presentacion.Forms.Mantenimientos.CuConfigurarIgvChild"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="400" Height="150" 
+           Title="Configurar IGV">
+    <Grid x:Name="LayoutRoot" Margin="2">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.489*"/>
+    		<ColumnDefinition Width="0.511*"/>
+    	</Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.54*" />
+            <RowDefinition Height="0.46*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancelar" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="2" Grid.Column="1" />
+        <Button x:Name="OKButton" Content="Guardar" Click="OKButton_Click" Height="23" Margin="39,12,79,0" Grid.Row="2" Grid.Column="1" />
+        <TextBox x:Name="igvTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Height="24" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="200" IsReadOnly="True"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nuevo Igv :" VerticalAlignment="Center" Height="16" Grid.Row="1"/>
+        <TextBox x:Name="nuevoIgvTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Height="24" Grid.Row="1" KeyDown="nuevoIgvTextBox_KeyDown"/>
+    </Grid>
+</controls:ChildWindow>

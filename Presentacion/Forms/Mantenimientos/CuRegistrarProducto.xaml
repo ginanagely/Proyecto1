@@ -1,0 +1,66 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="Presentacion.Forms.Mantenimientos.CuRegistrarProducto"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="584">
+    
+    <Grid x:Name="LayoutRoot" Background="White" Opacity="0.95">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.362*"/>
+    		<ColumnDefinition Width="0.638*"/>
+    	</Grid.ColumnDefinitions>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="auto"/>
+    		<RowDefinition Height="auto"/>
+    		<RowDefinition Height="auto"/>
+    		<RowDefinition Height="0.656*"/>
+    	</Grid.RowDefinitions>
+    	<TextBlock HorizontalAlignment="Center" Margin="0,10" TextWrapping="Wrap" Text="Registrar Producto" d:LayoutOverrides="Height, GridBox" Grid.ColumnSpan="2"/>
+    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Codigo Producto :" Grid.Row="1" Margin="0" VerticalAlignment="Top"/>
+    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nombre Producto :" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Top"/>
+    	<TextBox x:Name="codigoTextBox" HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Grid.Row="1" Width="100" Height="23" VerticalAlignment="Top" KeyDown="codigoTextBox_KeyDown"/>
+
+        <sdk:AutoCompleteBox x:Name="nombreAutoComplete" HorizontalAlignment="Left" Margin="120,0,0,0" Grid.Column="1" Grid.Row="1" Width="180" Height="23" VerticalAlignment="Top" ValueMemberPath="Nombre">
+            <sdk:AutoCompleteBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nombre}" />
+
+                </DataTemplate>
+            </sdk:AutoCompleteBox.ItemTemplate>
+        </sdk:AutoCompleteBox>
+    	<Grid x:Name="productoDetGrid" Margin="0" Grid.Row="2" Grid.ColumnSpan="2">
+    		<Grid.RowDefinitions>
+    			<RowDefinition Height="auto"/>
+    			<RowDefinition Height="auto"/>
+    		</Grid.RowDefinitions>
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition Width="0.377*"/>
+    			<ColumnDefinition Width="0.3*"/>
+    			<ColumnDefinition Width="0.324*"/>
+    		</Grid.ColumnDefinitions>
+    		<Border BorderBrush="Black" BorderThickness="5" Margin="0" Grid.RowSpan="2" Grid.ColumnSpan="3" CornerRadius="8"/>
+    		<ComboBox x:Name="tipoMarcaComboBox" DisplayMemberPath="DescCodigo" SelectedValuePath="Codigo" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Margin="0,30,0,10"/>
+    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Tipo Marca :" VerticalAlignment="Center" Margin="20,30,0,10"/>
+    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Modelo :" VerticalAlignment="Center" Margin="20,30,0,10" Grid.Column="1"/>
+    		<TextBox x:Name="modeloTextBox" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Width="100" Height="23" Margin="0,30,0,10"/>
+    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Precio :" VerticalAlignment="Center" Margin="20,30,0,10" Grid.Column="2"/>
+    		<TextBox x:Name="precioTextBox" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="2" Width="80" Height="23" Margin="0,30,20,10" KeyDown="precioTextBox_KeyDown"/>
+    		<TextBox x:Name="especificacionTextBox" Margin="-98,8,20,30" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" Height="60"/>
+    		<TextBlock x:Name="especificacionesTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Especificaciones :" VerticalAlignment="Top" Margin="20,10,0,0" Grid.Row="1"/>
+    		<TextBlock x:Name="imagenTextBlock" TextWrapping="Wrap" Text="Imagen :" VerticalAlignment="Top" Margin="20,80,107,7" Grid.Row="1" d:LayoutOverrides="Width" HorizontalAlignment="Left"/>
+    		<TextBox x:Name="imagenTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" Height="23" Margin="120,80,0,7" Grid.Row="1" Grid.ColumnSpan="3" d:LayoutOverrides="GridBox" IsReadOnly="True"/>
+    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Datos Producto" VerticalAlignment="Top" Margin="10,7,0,0" FontWeight="Bold"/>
+    		<Button x:Name="imagenButton" Content="..." HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Grid.Row="2" Grid.Column="2" Margin="0,80,20,0" Height="23" Click="imagenButton_Click"/>
+    	</Grid>
+    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cantidad :" Grid.Row="3" Margin="0,10,0,0" Height="18" VerticalAlignment="Top"/>
+    	<TextBox x:Name="cantidadTextBox" HorizontalAlignment="Right" Margin="0,10,0,0" TextWrapping="Wrap" Grid.Row="3" Width="100" Height="23" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" KeyDown="cantidadTextBox_KeyDown"/>
+    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nro Documento :" Grid.Row="3" Margin="9,10,0,0" Height="18" VerticalAlignment="Top" Grid.Column="1"/>
+    	<TextBox x:Name="nroDocumentoTextBox" Margin="120,10,0,0" TextWrapping="Wrap" Grid.Row="3" Height="23" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Grid.Column="1" HorizontalAlignment="Left" Width="120"/>
+    	<Button x:Name="buscarButton" Content="Buscar" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,8,10" Grid.Row="1" Width="61" Click="buscarButton_Click" />
+    	<Button x:Name="registrarButton" Content="Agregar" HorizontalAlignment="Left" Margin="0,40,0,0" Width="75" d:LayoutOverrides="Height" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Click="registrarButton_Click" />
+
+    </Grid>
+</UserControl>

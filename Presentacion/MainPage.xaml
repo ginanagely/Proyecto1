@@ -1,0 +1,65 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="Presentacion.MainPage"
+    xmlns:t="clr-namespace:Presentacion.Forms"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    
+    
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+	<UserControl.Background>
+		<ImageBrush Stretch="UniformToFill" ImageSource="fondoazul.jpg"/>
+	</UserControl.Background>
+
+	<Grid x:Name="LayoutRoot" Background="Silver" Width="900">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+    	
+
+		<telerik:RadDockPanel>
+			
+			<ContentControl  telerik:RadDockPanel.Dock="Top" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="200">
+				<Grid Background="Black">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="0.823*"/>
+						<ColumnDefinition Width="0.177*"/>
+					</Grid.ColumnDefinitions>
+                    <t:Cabecera Grid.ColumnSpan="2"/>
+                        <TextBlock x:Name="usuarioTextBlock" Text="Usuario" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14.667" FontStyle="Italic" FontFamily="Aparajita" Foreground="#FF0FFF1E" />
+					<Button x:Name="loginButton" Content="Login" Grid.Column="1" Grid.Row="1" Click="loginButton_Click"/>
+				</Grid>
+			</ContentControl>
+            <ContentControl  telerik:RadDockPanel.Dock="Left">
+            	<Grid Width="200" VerticalAlignment="Top" Height="600">
+            		<Grid.Background>
+            			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            				<GradientStop Color="#FF003EFF" Offset="0.266"/>
+            				<GradientStop Color="#FF7DC1FF" Offset="1"/>
+            			</LinearGradientBrush>
+            		</Grid.Background>
+            		<Image HorizontalAlignment="Center" Source="carrito-compra.png" Margin="0,150,0,0"/>
+            		<Grid Margin="0" VerticalAlignment="Top" Width="200">
+            			<t:Menu x:Name="MenuUserControl"/>
+            		</Grid>
+            	</Grid>
+            </ContentControl>
+            <ContentControl telerik:RadDockPanel.Dock="Left" HorizontalContentAlignment="Center">
+            	<Grid VerticalAlignment="Top">
+            		<Image VerticalAlignment="Top" Source="arroba.jpg" Stretch="Fill"/>
+            		<Grid Width="700" HorizontalAlignment="Center" x:Name="ContenidoFrame" VerticalAlignment="Top"/>
+            	</Grid>
+            </ContentControl>
+			
+		</telerik:RadDockPanel>
+    	
+
+	</Grid>
+</UserControl>

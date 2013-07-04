@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TIENDAVIRTUALModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TIENDAVIRTUALModelStoreContainer">
+          <EntitySet Name="CONFIG" EntityType="TIENDAVIRTUALModel.Store.CONFIG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LOGIN" EntityType="TIENDAVIRTUALModel.Store.LOGIN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRODUCTO" EntityType="TIENDAVIRTUALModel.Store.PRODUCTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RECLAMO" EntityType="TIENDAVIRTUALModel.Store.RECLAMO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REGISTRODIARIO" EntityType="TIENDAVIRTUALModel.Store.REGISTRODIARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TIPOMARCA" EntityType="TIENDAVIRTUALModel.Store.TIPOMARCA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TIPOTARJETA" EntityType="TIENDAVIRTUALModel.Store.TIPOTARJETA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TIPOUSUARIO" EntityType="TIENDAVIRTUALModel.Store.TIPOUSUARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USUARIO" EntityType="TIENDAVIRTUALModel.Store.USUARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VENTA" EntityType="TIENDAVIRTUALModel.Store.VENTA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VENTADETALLE" EntityType="TIENDAVIRTUALModel.Store.VENTADETALLE" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_LOGIN_USUARIO" Association="TIENDAVIRTUALModel.Store.FK_LOGIN_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="LOGIN" EntitySet="LOGIN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_TIPOMARCA" Association="TIENDAVIRTUALModel.Store.FK_PRODUCTO_TIPOMARCA">
+            <End Role="TIPOMARCA" EntitySet="TIPOMARCA" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECLAMO_USUARIO" Association="TIENDAVIRTUALModel.Store.FK_RECLAMO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="RECLAMO" EntitySet="RECLAMO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECLAMO_VENTA" Association="TIENDAVIRTUALModel.Store.FK_RECLAMO_VENTA">
+            <End Role="VENTA" EntitySet="VENTA" />
+            <End Role="RECLAMO" EntitySet="RECLAMO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRODIARIO_PRODUCTO" Association="TIENDAVIRTUALModel.Store.FK_REGISTRODIARIO_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="REGISTRODIARIO" EntitySet="REGISTRODIARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_TIPOTARJETA" Association="TIENDAVIRTUALModel.Store.FK_USUARIO_TIPOTARJETA">
+            <End Role="TIPOTARJETA" EntitySet="TIPOTARJETA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_TIPOUSUARIO" Association="TIENDAVIRTUALModel.Store.FK_USUARIO_TIPOUSUARIO">
+            <End Role="TIPOUSUARIO" EntitySet="TIPOUSUARIO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_USUARIO" Association="TIENDAVIRTUALModel.Store.FK_VENTA_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTADETALLE_PRODUCTO" Association="TIENDAVIRTUALModel.Store.FK_VENTADETALLE_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="VENTADETALLE" EntitySet="VENTADETALLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTADETALLE_VENTA" Association="TIENDAVIRTUALModel.Store.FK_VENTADETALLE_VENTA">
+            <End Role="VENTA" EntitySet="VENTA" />
+            <End Role="VENTADETALLE" EntitySet="VENTADETALLE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CONFIG">
+          <Key>
+            <PropertyRef Name="IDCONFIG" />
+          </Key>
+          <Property Name="IDCONFIG" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="DESCRIPCION" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="VALOR" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="IDLOGIN" />
+          </Key>
+          <Property Name="IDLOGIN" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CLAVE" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+          </Key>
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="IDTIPOMARCA" Type="int" Nullable="false" />
+          <Property Name="MODELO" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="PRECIO" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ESPECIFICACIONES" Type="text" />
+          <Property Name="ARCHIVO" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="RECLAMO">
+          <Key>
+            <PropertyRef Name="IDRECLAMO" />
+          </Key>
+          <Property Name="IDRECLAMO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDVENTA" Type="int" Nullable="false" />
+          <Property Name="ASUNTO" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="ESTADO" Type="int" Nullable="false" />
+          <Property Name="ESTADOREGISTRO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REGISTRODIARIO">
+          <Key>
+            <PropertyRef Name="IDREGISTRODIARIO" />
+          </Key>
+          <Property Name="IDREGISTRODIARIO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="CANTIDAD" Type="int" Nullable="false" />
+          <Property Name="OPERACION" Type="bit" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="NUMERODOCUMENTO" Type="varchar" MaxLength="50" />
+          <Property Name="ESTADOREGISTRO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPOMARCA">
+          <Key>
+            <PropertyRef Name="IDTIPOMARCA" />
+          </Key>
+          <Property Name="IDTIPOMARCA" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TIPOTARJETA">
+          <Key>
+            <PropertyRef Name="IDTIPOTARJETA" />
+          </Key>
+          <Property Name="IDTIPOTARJETA" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TIPOUSUARIO">
+          <Key>
+            <PropertyRef Name="IDTIPOUSUARIO" />
+          </Key>
+          <Property Name="IDTIPOUSUARIO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+          </Key>
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRES" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="APELLIDOS" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="FECHANACIMIENTO" Type="date" Nullable="false" />
+          <Property Name="TELEFONOFIJO" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="TELEFONOMOVIL" Type="varchar" MaxLength="12" />
+          <Property Name="CORREOELECTRONICO" Type="varchar" MaxLength="200" />
+          <Property Name="DNI" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="DISTRITO" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PROVINCIA" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DEPARTAMENTO" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CODIGOPOSTAL" Type="varchar" MaxLength="30" />
+          <Property Name="PAIS" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NUMEROTARJETA" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IDTIPOTARJETA" Type="int" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="IDTIPOUSUARIO" Type="int" Nullable="false" />
+          <Property Name="SALDOTARJETA" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="IDVENTA" />
+          </Key>
+          <Property Name="IDVENTA" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NUMERO" Type="varchar" MaxLength="50" />
+          <Property Name="IDUSUARIO" Type="int" />
+          <Property Name="FECHAHORA" Type="datetime" Nullable="false" />
+          <Property Name="ESTADO" Type="int" Nullable="false" />
+          <Property Name="ESTADOREGISTRO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VENTADETALLE">
+          <Key>
+            <PropertyRef Name="IDVENTADETALLE" />
+          </Key>
+          <Property Name="IDVENTADETALLE" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDVENTA" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="CANTIDAD" Type="int" Nullable="false" />
+          <Property Name="INSOLUTO" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="IGV" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="TOTAL" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="ESTADOREGISTRO" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LOGIN_USUARIO">
+          <End Role="USUARIO" Type="TIENDAVIRTUALModel.Store.USUARIO" Multiplicity="1" />
+          <End Role="LOGIN" Type="TIENDAVIRTUALModel.Store.LOGIN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="LOGIN">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_TIPOMARCA">
+          <End Role="TIPOMARCA" Type="TIENDAVIRTUALModel.Store.TIPOMARCA" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="TIENDAVIRTUALModel.Store.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOMARCA">
+              <PropertyRef Name="IDTIPOMARCA" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="IDTIPOMARCA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECLAMO_USUARIO">
+          <End Role="USUARIO" Type="TIENDAVIRTUALModel.Store.USUARIO" Multiplicity="1" />
+          <End Role="RECLAMO" Type="TIENDAVIRTUALModel.Store.RECLAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="RECLAMO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECLAMO_VENTA">
+          <End Role="VENTA" Type="TIENDAVIRTUALModel.Store.VENTA" Multiplicity="1" />
+          <End Role="RECLAMO" Type="TIENDAVIRTUALModel.Store.RECLAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="IDVENTA" />
+            </Principal>
+            <Dependent Role="RECLAMO">
+              <PropertyRef Name="IDVENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRODIARIO_PRODUCTO">
+          <End Role="PRODUCTO" Type="TIENDAVIRTUALModel.Store.PRODUCTO" Multiplicity="1" />
+          <End Role="REGISTRODIARIO" Type="TIENDAVIRTUALModel.Store.REGISTRODIARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="REGISTRODIARIO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_TIPOTARJETA">
+          <End Role="TIPOTARJETA" Type="TIENDAVIRTUALModel.Store.TIPOTARJETA" Multiplicity="1" />
+          <End Role="USUARIO" Type="TIENDAVIRTUALModel.Store.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOTARJETA">
+              <PropertyRef Name="IDTIPOTARJETA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDTIPOTARJETA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_TIPOUSUARIO">
+          <End Role="TIPOUSUARIO" Type="TIENDAVIRTUALModel.Store.TIPOUSUARIO" Multiplicity="1" />
+          <End Role="USUARIO" Type="TIENDAVIRTUALModel.Store.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOUSUARIO">
+              <PropertyRef Name="IDTIPOUSUARIO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDTIPOUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_USUARIO">
+          <End Role="USUARIO" Type="TIENDAVIRTUALModel.Store.USUARIO" Multiplicity="0..1" />
+          <End Role="VENTA" Type="TIENDAVIRTUALModel.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTADETALLE_PRODUCTO">
+          <End Role="PRODUCTO" Type="TIENDAVIRTUALModel.Store.PRODUCTO" Multiplicity="1" />
+          <End Role="VENTADETALLE" Type="TIENDAVIRTUALModel.Store.VENTADETALLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="VENTADETALLE">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTADETALLE_VENTA">
+          <End Role="VENTA" Type="TIENDAVIRTUALModel.Store.VENTA" Multiplicity="1" />
+          <End Role="VENTADETALLE" Type="TIENDAVIRTUALModel.Store.VENTADETALLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="IDVENTA" />
+            </Principal>
+            <Dependent Role="VENTADETALLE">
+              <PropertyRef Name="IDVENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TIENDAVIRTUALModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TIENDAVIRTUALEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CONFIGs" EntityType="TIENDAVIRTUALModel.CONFIG" />
+          <EntitySet Name="LOGINs" EntityType="TIENDAVIRTUALModel.LOGIN" />
+          <EntitySet Name="PRODUCTOes" EntityType="TIENDAVIRTUALModel.PRODUCTO" />
+          <EntitySet Name="RECLAMOes" EntityType="TIENDAVIRTUALModel.RECLAMO" />
+          <EntitySet Name="TIPOMARCAs" EntityType="TIENDAVIRTUALModel.TIPOMARCA" />
+          <EntitySet Name="TIPOTARJETAs" EntityType="TIENDAVIRTUALModel.TIPOTARJETA" />
+          <EntitySet Name="VENTAs" EntityType="TIENDAVIRTUALModel.VENTA" />
+          <EntitySet Name="VENTADETALLEs" EntityType="TIENDAVIRTUALModel.VENTADETALLE" />
+          <AssociationSet Name="FK_PRODUCTO_TIPOMARCA" Association="TIENDAVIRTUALModel.FK_PRODUCTO_TIPOMARCA">
+            <End Role="TIPOMARCA" EntitySet="TIPOMARCAs" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTADETALLE_PRODUCTO" Association="TIENDAVIRTUALModel.FK_VENTADETALLE_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
+            <End Role="VENTADETALLE" EntitySet="VENTADETALLEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECLAMO_VENTA" Association="TIENDAVIRTUALModel.FK_RECLAMO_VENTA">
+            <End Role="VENTA" EntitySet="VENTAs" />
+            <End Role="RECLAMO" EntitySet="RECLAMOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTADETALLE_VENTA" Association="TIENDAVIRTUALModel.FK_VENTADETALLE_VENTA">
+            <End Role="VENTA" EntitySet="VENTAs" />
+            <End Role="VENTADETALLE" EntitySet="VENTADETALLEs" />
+          </AssociationSet>
+          <EntitySet Name="TIPOUSUARIO" EntityType="TIENDAVIRTUALModel.TIPOUSUARIO" />
+          <EntitySet Name="REGISTRODIARIOs" EntityType="TIENDAVIRTUALModel.REGISTRODIARIO" />
+          <AssociationSet Name="FK_REGISTRODIARIO_PRODUCTO" Association="TIENDAVIRTUALModel.FK_REGISTRODIARIO_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
+            <End Role="REGISTRODIARIO" EntitySet="REGISTRODIARIOs" />
+          </AssociationSet>
+          <EntitySet Name="USUARIOs" EntityType="TIENDAVIRTUALModel.USUARIO" />
+          <AssociationSet Name="FK_LOGIN_USUARIO" Association="TIENDAVIRTUALModel.FK_LOGIN_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="LOGIN" EntitySet="LOGINs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECLAMO_USUARIO" Association="TIENDAVIRTUALModel.FK_RECLAMO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="RECLAMO" EntitySet="RECLAMOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_TIPOTARJETA" Association="TIENDAVIRTUALModel.FK_USUARIO_TIPOTARJETA">
+            <End Role="TIPOTARJETA" EntitySet="TIPOTARJETAs" />
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_TIPOUSUARIO" Association="TIENDAVIRTUALModel.FK_USUARIO_TIPOUSUARIO">
+            <End Role="TIPOUSUARIO" EntitySet="TIPOUSUARIO" />
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_USUARIO" Association="TIENDAVIRTUALModel.FK_VENTA_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="VENTA" EntitySet="VENTAs" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="CONFIG">
+          <Key>
+            <PropertyRef Name="IDCONFIG" />
+          </Key>
+          <Property Name="IDCONFIG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VALOR" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="IDLOGIN" />
+          </Key>
+          <Property Name="IDLOGIN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CLAVE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="USUARIO" Relationship="TIENDAVIRTUALModel.FK_LOGIN_USUARIO" FromRole="LOGIN" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+          </Key>
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IDTIPOMARCA" Type="Int32" Nullable="false" />
+          <Property Name="MODELO" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PRECIO" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ESPECIFICACIONES" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ARCHIVO" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TIPOMARCA" Relationship="TIENDAVIRTUALModel.FK_PRODUCTO_TIPOMARCA" FromRole="PRODUCTO" ToRole="TIPOMARCA" />
+          <NavigationProperty Name="VENTADETALLEs" Relationship="TIENDAVIRTUALModel.FK_VENTADETALLE_PRODUCTO" FromRole="PRODUCTO" ToRole="VENTADETALLE" />
+          <NavigationProperty Name="REGISTRODIARIOs" Relationship="TIENDAVIRTUALModel.FK_REGISTRODIARIO_PRODUCTO" FromRole="PRODUCTO" ToRole="REGISTRODIARIO" />
+        </EntityType>
+        <EntityType Name="RECLAMO">
+          <Key>
+            <PropertyRef Name="IDRECLAMO" />
+          </Key>
+          <Property Name="IDRECLAMO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDVENTA" Type="Int32" Nullable="false" />
+          <Property Name="ASUNTO" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="ESTADOREGISTRO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VENTA" Relationship="TIENDAVIRTUALModel.FK_RECLAMO_VENTA" FromRole="RECLAMO" ToRole="VENTA" />
+          <NavigationProperty Name="USUARIO" Relationship="TIENDAVIRTUALModel.FK_RECLAMO_USUARIO" FromRole="RECLAMO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="TIPOMARCA">
+          <Key>
+            <PropertyRef Name="IDTIPOMARCA" />
+          </Key>
+          <Property Name="IDTIPOMARCA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PRODUCTOes" Relationship="TIENDAVIRTUALModel.FK_PRODUCTO_TIPOMARCA" FromRole="TIPOMARCA" ToRole="PRODUCTO" />
+        </EntityType>
+        <EntityType Name="TIPOTARJETA">
+          <Key>
+            <PropertyRef Name="IDTIPOTARJETA" />
+          </Key>
+          <Property Name="IDTIPOTARJETA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="USUARIOs" Relationship="TIENDAVIRTUALModel.FK_USUARIO_TIPOTARJETA" FromRole="TIPOTARJETA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="IDVENTA" />
+          </Key>
+          <Property Name="IDVENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUMERO" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IDUSUARIO" Type="Int32" />
+          <Property Name="FECHAHORA" Type="DateTime" Nullable="false" />
+          <Property Name="ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="ESTADOREGISTRO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="RECLAMOes" Relationship="TIENDAVIRTUALModel.FK_RECLAMO_VENTA" FromRole="VENTA" ToRole="RECLAMO" />
+          <NavigationProperty Name="VENTADETALLEs" Relationship="TIENDAVIRTUALModel.FK_VENTADETALLE_VENTA" FromRole="VENTA" ToRole="VENTADETALLE" />
+          <NavigationProperty Name="USUARIO" Relationship="TIENDAVIRTUALModel.FK_VENTA_USUARIO" FromRole="VENTA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="VENTADETALLE">
+          <Key>
+            <PropertyRef Name="IDVENTADETALLE" />
+          </Key>
+          <Property Name="IDVENTADETALLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDVENTA" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
+          <Property Name="INSOLUTO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IGV" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ESTADOREGISTRO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PRODUCTO" Relationship="TIENDAVIRTUALModel.FK_VENTADETALLE_PRODUCTO" FromRole="VENTADETALLE" ToRole="PRODUCTO" />
+          <NavigationProperty Name="VENTA" Relationship="TIENDAVIRTUALModel.FK_VENTADETALLE_VENTA" FromRole="VENTADETALLE" ToRole="VENTA" />
+        </EntityType>
+        <Association Name="FK_PRODUCTO_TIPOMARCA">
+          <End Role="TIPOMARCA" Type="TIENDAVIRTUALModel.TIPOMARCA" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="TIENDAVIRTUALModel.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOMARCA">
+              <PropertyRef Name="IDTIPOMARCA" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="IDTIPOMARCA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTADETALLE_PRODUCTO">
+          <End Role="PRODUCTO" Type="TIENDAVIRTUALModel.PRODUCTO" Multiplicity="1" />
+          <End Role="VENTADETALLE" Type="TIENDAVIRTUALModel.VENTADETALLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="VENTADETALLE">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECLAMO_VENTA">
+          <End Role="VENTA" Type="TIENDAVIRTUALModel.VENTA" Multiplicity="1" />
+          <End Role="RECLAMO" Type="TIENDAVIRTUALModel.RECLAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="IDVENTA" />
+            </Principal>
+            <Dependent Role="RECLAMO">
+              <PropertyRef Name="IDVENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTADETALLE_VENTA">
+          <End Role="VENTA" Type="TIENDAVIRTUALModel.VENTA" Multiplicity="1" />
+          <End Role="VENTADETALLE" Type="TIENDAVIRTUALModel.VENTADETALLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENTA">
+              <PropertyRef Name="IDVENTA" />
+            </Principal>
+            <Dependent Role="VENTADETALLE">
+              <PropertyRef Name="IDVENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TIPOUSUARIO">
+          <Key>
+            <PropertyRef Name="IDTIPOUSUARIO" />
+          </Key>
+          <Property Type="Int32" Name="IDTIPOUSUARIO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DESCRIPCION" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USUARIOs" Relationship="TIENDAVIRTUALModel.FK_USUARIO_TIPOUSUARIO" FromRole="TIPOUSUARIO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="REGISTRODIARIO">
+          <Key>
+            <PropertyRef Name="IDREGISTRODIARIO" />
+          </Key>
+          <Property Type="Int32" Name="IDREGISTRODIARIO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDPRODUCTO" Nullable="false" />
+          <Property Type="Int32" Name="CANTIDAD" Nullable="false" />
+          <Property Type="Boolean" Name="OPERACION" Nullable="false" />
+          <Property Type="DateTime" Name="FECHA" Nullable="false" />
+          <Property Type="Int32" Name="IDUSUARIO" />
+          <Property Type="String" Name="NUMERODOCUMENTO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESTADOREGISTRO" Nullable="false" />
+          <NavigationProperty Name="PRODUCTO" Relationship="TIENDAVIRTUALModel.FK_REGISTRODIARIO_PRODUCTO" FromRole="REGISTRODIARIO" ToRole="PRODUCTO" />
+        </EntityType>
+        <Association Name="FK_REGISTRODIARIO_PRODUCTO">
+          <End Type="TIENDAVIRTUALModel.PRODUCTO" Role="PRODUCTO" Multiplicity="1" />
+          <End Type="TIENDAVIRTUALModel.REGISTRODIARIO" Role="REGISTRODIARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="REGISTRODIARIO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+          </Key>
+          <Property Type="Int32" Name="IDUSUARIO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FECHANACIMIENTO" Nullable="false" />
+          <Property Type="String" Name="TELEFONOFIJO" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TELEFONOMOVIL" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CORREOELECTRONICO" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DNI" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DISTRITO" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PROVINCIA" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DEPARTAMENTO" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CODIGOPOSTAL" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PAIS" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NUMEROTARJETA" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDTIPOTARJETA" Nullable="false" />
+          <Property Type="String" Name="DIRECCION" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDTIPOUSUARIO" Nullable="false" />
+          <Property Type="Decimal" Name="SALDOTARJETA" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="LOGINs" Relationship="TIENDAVIRTUALModel.FK_LOGIN_USUARIO" FromRole="USUARIO" ToRole="LOGIN" />
+          <NavigationProperty Name="RECLAMOes" Relationship="TIENDAVIRTUALModel.FK_RECLAMO_USUARIO" FromRole="USUARIO" ToRole="RECLAMO" />
+          <NavigationProperty Name="TIPOTARJETA" Relationship="TIENDAVIRTUALModel.FK_USUARIO_TIPOTARJETA" FromRole="USUARIO" ToRole="TIPOTARJETA" />
+          <NavigationProperty Name="TIPOUSUARIO" Relationship="TIENDAVIRTUALModel.FK_USUARIO_TIPOUSUARIO" FromRole="USUARIO" ToRole="TIPOUSUARIO" />
+          <NavigationProperty Name="VENTAs" Relationship="TIENDAVIRTUALModel.FK_VENTA_USUARIO" FromRole="USUARIO" ToRole="VENTA" />
+        </EntityType>
+        <Association Name="FK_LOGIN_USUARIO">
+          <End Type="TIENDAVIRTUALModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="TIENDAVIRTUALModel.LOGIN" Role="LOGIN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="LOGIN">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECLAMO_USUARIO">
+          <End Type="TIENDAVIRTUALModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="TIENDAVIRTUALModel.RECLAMO" Role="RECLAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="RECLAMO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_TIPOTARJETA">
+          <End Type="TIENDAVIRTUALModel.TIPOTARJETA" Role="TIPOTARJETA" Multiplicity="1" />
+          <End Type="TIENDAVIRTUALModel.USUARIO" Role="USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOTARJETA">
+              <PropertyRef Name="IDTIPOTARJETA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDTIPOTARJETA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_TIPOUSUARIO">
+          <End Type="TIENDAVIRTUALModel.TIPOUSUARIO" Role="TIPOUSUARIO" Multiplicity="1" />
+          <End Type="TIENDAVIRTUALModel.USUARIO" Role="USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOUSUARIO">
+              <PropertyRef Name="IDTIPOUSUARIO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDTIPOUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_USUARIO">
+          <End Type="TIENDAVIRTUALModel.USUARIO" Role="USUARIO" Multiplicity="0..1" />
+          <End Type="TIENDAVIRTUALModel.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TIENDAVIRTUALModelStoreContainer" CdmEntityContainer="TIENDAVIRTUALEntities">
+          <EntitySetMapping Name="CONFIGs"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.CONFIG"><MappingFragment StoreEntitySet="CONFIG">
+            <ScalarProperty Name="IDCONFIG" ColumnName="IDCONFIG" />
+            <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+            <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+            <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LOGINs"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.LOGIN"><MappingFragment StoreEntitySet="LOGIN">
+            <ScalarProperty Name="IDLOGIN" ColumnName="IDLOGIN" />
+            <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+            <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+            <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTOes"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.PRODUCTO"><MappingFragment StoreEntitySet="PRODUCTO">
+            <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+            <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+            <ScalarProperty Name="IDTIPOMARCA" ColumnName="IDTIPOMARCA" />
+            <ScalarProperty Name="MODELO" ColumnName="MODELO" />
+            <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+            <ScalarProperty Name="ESPECIFICACIONES" ColumnName="ESPECIFICACIONES" />
+            <ScalarProperty Name="ARCHIVO" ColumnName="ARCHIVO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RECLAMOes"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.RECLAMO"><MappingFragment StoreEntitySet="RECLAMO">
+            <ScalarProperty Name="IDRECLAMO" ColumnName="IDRECLAMO" />
+            <ScalarProperty Name="IDVENTA" ColumnName="IDVENTA" />
+            <ScalarProperty Name="ASUNTO" ColumnName="ASUNTO" />
+            <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+            <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+            <ScalarProperty Name="ESTADOREGISTRO" ColumnName="ESTADOREGISTRO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TIPOMARCAs"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.TIPOMARCA"><MappingFragment StoreEntitySet="TIPOMARCA">
+            <ScalarProperty Name="IDTIPOMARCA" ColumnName="IDTIPOMARCA" />
+            <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TIPOTARJETAs"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.TIPOTARJETA"><MappingFragment StoreEntitySet="TIPOTARJETA">
+            <ScalarProperty Name="IDTIPOTARJETA" ColumnName="IDTIPOTARJETA" />
+            <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VENTAs"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.VENTA"><MappingFragment StoreEntitySet="VENTA">
+            <ScalarProperty Name="IDVENTA" ColumnName="IDVENTA" />
+            <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+            <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+            <ScalarProperty Name="FECHAHORA" ColumnName="FECHAHORA" />
+            <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+            <ScalarProperty Name="ESTADOREGISTRO" ColumnName="ESTADOREGISTRO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VENTADETALLEs"><EntityTypeMapping TypeName="TIENDAVIRTUALModel.VENTADETALLE"><MappingFragment StoreEntitySet="VENTADETALLE">
+            <ScalarProperty Name="IDVENTADETALLE" ColumnName="IDVENTADETALLE" />
+            <ScalarProperty Name="IDVENTA" ColumnName="IDVENTA" />
+            <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+            <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+            <ScalarProperty Name="INSOLUTO" ColumnName="INSOLUTO" />
+            <ScalarProperty Name="IGV" ColumnName="IGV" />
+            <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+            <ScalarProperty Name="ESTADOREGISTRO" ColumnName="ESTADOREGISTRO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TIPOUSUARIO">
+            <EntityTypeMapping TypeName="TIENDAVIRTUALModel.TIPOUSUARIO">
+              <MappingFragment StoreEntitySet="TIPOUSUARIO">
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="IDTIPOUSUARIO" ColumnName="IDTIPOUSUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGISTRODIARIOs">
+            <EntityTypeMapping TypeName="TIENDAVIRTUALModel.REGISTRODIARIO">
+              <MappingFragment StoreEntitySet="REGISTRODIARIO">
+                <ScalarProperty Name="ESTADOREGISTRO" ColumnName="ESTADOREGISTRO" />
+                <ScalarProperty Name="NUMERODOCUMENTO" ColumnName="NUMERODOCUMENTO" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="OPERACION" ColumnName="OPERACION" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="IDREGISTRODIARIO" ColumnName="IDREGISTRODIARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOs">
+            <EntityTypeMapping TypeName="TIENDAVIRTUALModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="SALDOTARJETA" ColumnName="SALDOTARJETA" />
+                <ScalarProperty Name="IDTIPOUSUARIO" ColumnName="IDTIPOUSUARIO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="IDTIPOTARJETA" ColumnName="IDTIPOTARJETA" />
+                <ScalarProperty Name="NUMEROTARJETA" ColumnName="NUMEROTARJETA" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+                <ScalarProperty Name="CODIGOPOSTAL" ColumnName="CODIGOPOSTAL" />
+                <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="CORREOELECTRONICO" ColumnName="CORREOELECTRONICO" />
+                <ScalarProperty Name="TELEFONOMOVIL" ColumnName="TELEFONOMOVIL" />
+                <ScalarProperty Name="TELEFONOFIJO" ColumnName="TELEFONOFIJO" />
+                <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Modelo">
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.CONFIG" Width="1.5" PointX="7.75" PointY="0.75" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.LOGIN" Width="1.5" PointX="5.25" PointY="2.75" Height="1.7566536458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.PRODUCTO" Width="1.5" PointX="5.25" PointY="12.25" Height="2.5783902994791674" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.RECLAMO" Width="1.5" PointX="7.5" PointY="5.75" Height="2.2496956380208326" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.TIPOMARCA" Width="1.5" PointX="3" PointY="12.75" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.TIPOTARJETA" Width="1.5" PointX="0.75" PointY="4.5" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.VENTA" Width="1.5" PointX="5.25" PointY="8.375" Height="2.4140429687499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.VENTADETALLE" Width="1.5" PointX="7.5" PointY="9.25" Height="2.5783902994791674" IsExpanded="true" />
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_PRODUCTO_TIPOMARCA" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.4639794921875" />
+          <ConnectorPoint PointX="5.25" PointY="13.4639794921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_VENTADETALLE_PRODUCTO" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="12.251152846153847" />
+          <ConnectorPoint PointX="7.125" PointY="11.876152846153847" />
+          <ConnectorPoint PointX="7.125" PointY="12.204543145633014" />
+          <ConnectorPoint PointX="7.5011528461538459" PointY="11.828390299479167" />
+        </AssociationConnector>
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_RECLAMO_VENTA" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="8.375" />
+          <ConnectorPoint PointX="6" PointY="6.8748478190104159" />
+          <ConnectorPoint PointX="7.5" PointY="6.8748478190104159" />
+        </AssociationConnector>
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_VENTADETALLE_VENTA" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="10.019521484375" />
+          <ConnectorPoint PointX="7.5" PointY="10.019521484375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.TIPOUSUARIO" Width="1.5" PointX="0.75" PointY="1.5" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.REGISTRODIARIO" Width="1.5" PointX="7.5" PointY="13.375" Height="2.4140429687500031" />
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_REGISTRODIARIO_PRODUCTO" >
+          <ConnectorPoint PointX="6.75" PointY="14.101695149739584" />
+          <ConnectorPoint PointX="7.5" PointY="14.101695149739584" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TIENDAVIRTUALModel.USUARIO" Width="1.5" PointX="3" PointY="1.375" Height="4.7149055989583317" />
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_LOGIN_USUARIO" >
+          <ConnectorPoint PointX="4.5" PointY="3.6283268229166667" />
+          <ConnectorPoint PointX="5.25" PointY="3.6283268229166667" />
+        </AssociationConnector>
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_RECLAMO_USUARIO" >
+          <ConnectorPoint PointX="4.5" PointY="5.9199527994791659" />
+          <ConnectorPoint PointX="7.5" PointY="5.9199527994791659" />
+        </AssociationConnector>
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_USUARIO_TIPOTARJETA" >
+          <ConnectorPoint PointX="2.25" PointY="5.2139794921875" />
+          <ConnectorPoint PointX="3" PointY="5.2139794921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_USUARIO_TIPOUSUARIO" >
+          <ConnectorPoint PointX="2.25" PointY="2.2139794921875" />
+          <ConnectorPoint PointX="3" PointY="2.2139794921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="TIENDAVIRTUALModel.FK_VENTA_USUARIO" >
+          <ConnectorPoint PointX="3.75" PointY="6.0899055989583317" />
+          <ConnectorPoint PointX="3.75" PointY="9.582021484375" />
+          <ConnectorPoint PointX="5.25" PointY="9.582021484375" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
