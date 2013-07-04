@@ -43,8 +43,8 @@ namespace LogicaNegocios.CU
                 }
                 else
                 {
-                    //respuestaEvento = "ERROR - PRODUCTOS INSUFICIENTES PARA PROCEDER CON LA COMPRA";
-                    respuestaEvento = "ERROR NO HAY INSUFICIENTES PARA PROCEDER CON LA COMPRA";
+                    respuestaEvento = "ERROR - PRODUCTOS INSUFICIENTES PARA PROCEDER CON LA COMPRA";
+                    
                 }
                 transaction.Complete();
             }
