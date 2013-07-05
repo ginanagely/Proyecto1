@@ -43,7 +43,7 @@ namespace LogicaNegocios.CU
                 }
                 else
                 {
-                    respuestaEvento = "ERROR - PRODUCTOS INSUFICIENTES PARA PROCEDER CON LA COMPRA";
+                    respuestaEvento = "";
                     
                     
                 }
