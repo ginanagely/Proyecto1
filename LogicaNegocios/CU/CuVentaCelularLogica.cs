@@ -74,8 +74,8 @@ namespace LogicaNegocios.CU
             catch
             {
                 //cadenaRespuesta="ERROR: en sintaxis recibida";
-                //cadenaRespuesta = "ERROR: en sintaxis ";
-                cadenaRespuesta = "ERROR: en  ";
+                cadenaRespuesta = "ERROR: en sintaxis ";
+                
             }
             
 
